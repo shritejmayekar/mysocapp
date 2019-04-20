@@ -1,0 +1,38 @@
+<div class="card">
+  <div class="card-body">
+    <form [formGroup]="angForm" novalidate>
+      <div class="form-group">
+        <label class="col-md-4">Person Name</label>
+        <input type="text" class="form-control" formControlName="person_name" #person_name />
+      </div>
+      <div *ngIf="angForm.controls['person_name'].invalid && (angForm.controls['person_name'].dirty || angForm.controls['person_name'].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.controls['person_name'].errors.required">
+          Person Name is required.
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-4">Occupation Name </label>
+        <input type="text" class="form-control" formControlName="occupation_name" #occupation_name />
+      </div>
+      <div *ngIf="angForm.controls['occupation_name'].invalid && (angForm.controls['occupation_name'].dirty || angForm.controls['occupation_name'].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.controls['occupation_name'].errors.required">
+          Occupation Name is required.
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-4">Mobile Number </label>
+        <input type="text" class="form-control" formControlName="mobile_number" #mobile_number />
+      </div>
+      <div *ngIf="angForm.controls['mobile_number'].invalid && (angForm.controls['mobile_number'].dirty || angForm.controls['mobile_number'].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.controls['mobile_number'].errors.required">
+          Mobile Number is required.
+        </div>
+      </div>
+      <div class="form-group">
+        <button type="submit" (click)="addMember(person_name.value, occupation_name.value, mobile_number.value)"
+        [disabled]="angForm.pristine || angForm.invalid" 
+        class="btn btn-primary">Add Member</button>
+      </div>
+    </form>
+  </div>
+</div>
