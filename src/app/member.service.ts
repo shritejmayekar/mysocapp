@@ -26,4 +26,9 @@ export class MemberService {
     return this.http
            .get(`${this.uri}`);
   }
+  editMember(id) {
+    return this
+    .http
+    .get(`${this.uri}/edit/${id}`);
+  }
 }

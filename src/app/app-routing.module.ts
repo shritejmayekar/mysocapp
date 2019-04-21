@@ -10,8 +10,8 @@ const routes: Routes = [
     component: MemberAddComponent
   },
   {
-    path: 'member/edit/:id',
-    component: MemberEditComponent
+    path: 'edit/:id',
+    component: MemberEditComponent,
   },
   {
     path: 'member',
